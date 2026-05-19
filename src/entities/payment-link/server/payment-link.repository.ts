@@ -1,3 +1,5 @@
+import "server-only";
+
 import { prisma} from "@/shared/server/prisma";
 
 interface CreatePaymentLinkParams {
@@ -31,4 +33,15 @@ export const paymentLinkRepository = {
       }
     });
   },
+
+  markAsPaid(id: string, paymentIntentId: string) {
+    return prisma.paymentLink.update({
+      where: { id },
+      data: {
+        status: "PAID",
+        stripePaymentIntentId: paymentIntentId,
+        paidAt: new Date(),
+      }
+    });
+  }
 }

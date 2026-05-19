@@ -10,7 +10,6 @@ export async function GET() {
   return NextResponse.json(paymentLinks);
 }
 
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
