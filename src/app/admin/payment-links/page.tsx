@@ -13,7 +13,7 @@ export default async function AdminPaymentLinksPage() {
       <CreatePaymentLinkForm/>
 
       {paymentLinks.length === 0 ? (
-        <p className="text-gray-500">No payment links yet.</p>
+        <p className="text-gray-500">No payment links yet!.</p>
       ) : (
         <div className="overflow-hidden rounded-xl border border-gray-200">
           <table className="w-full border-collapse text-left text-sm">
